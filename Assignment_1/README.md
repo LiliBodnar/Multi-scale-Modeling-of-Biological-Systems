@@ -1,15 +1,28 @@
-# Multi-scale-Modeling-of-Biological-Systems
-Assignment group 6
+# Assignment - Metabolic Modelling
+**Course:** Multi-scale Modeling of Biological Systems
+**Assignment group 6**
+
+## Team Members
+
+- Andrea Fraschetti (Student ID: i6342072)
+- Angelo Thompson (Student ID: i6325951)
+- Balázs Ács (Student ID: i6316911)
+- Lili Bodnár (Student ID: i6354888)
+
+
+## How to run
+1. Launch Jupyter notebook
+2. Open assignment_metabolic_modelling.ipynb
+3. Make sure all the depenedencies are in the same folder (e_coli_core.json and e_coli_core_expression.csv)
+3. Run all cells from top to bottom.
 
 Important Note: our submission is under the name "assignment_metabolic_modelling.ipynb", the other ipynb files within the folder were used to avoid merge conflicts.
 
 
+## AI DISCOLSURE: 
 
+ex2 see in notebook and chat_history_disclosure.pdf
 
-
-
-
-AI DISCOLSURE: 
 
 ex4 a)
 having some issues loading the model
