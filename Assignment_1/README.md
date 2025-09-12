@@ -29,4 +29,4 @@ def ensure_model():
         ) from e
 
 
-        <img width="816" height="627" alt="Screenshot 2025-09-12 at 21 50 34" src="https://github.com/user-attachments/assets/213b0547-9a50-46fe-a233-640dc57381b8" />
+<img width="816" height="627" alt="Screenshot 2025-09-12 at 21 50 34" src="https://github.com/user-attachments/assets/213b0547-9a50-46fe-a233-640dc57381b8" />
