@@ -22,13 +22,13 @@
 1. Which mutation is most dangerous and why? Provide quantitative evidence.
     Mutation A, B and C are equally dangerous as they all preclude the cell from any aptosis response (cell death) in the event of damaged DNA. For extensive evidence please look at graphs 2-11 in our notebook, but to summarize what we can see are the followings:
 
-        | Mutation                 | % of initial states ending in cancer-like attractor states|
-        | ------------------------ | --------------------------------------------------------- |
-        | No mutation              | 3.125% (8/256)                                            |
-        | A: p53 KO                | 50% (128/256)                                             |
-        | B: MYC amplification     | 50% (128/256)                                             |
-        | C: MDM2 overexpression   | 50% (128/256)                                             |
-        | D: p21 KO (custom)       | 3.125% (8/256)                                            |
+| Mutation                 | % of initial states ending in cancer-like attractor states|
+| ------------------------ | --------------------------------------------------------- |
+| No mutation              | 3.125% (8/256)                                            |
+| A: p53 KO                | 50% (128/256)                                             |
+| B: MYC amplification     | 50% (128/256)                                             |
+| C: MDM2 overexpression   | 50% (128/256)                                             |
+| D: p21 KO (custom)       | 3.125% (8/256)                                            |
 
     That is when the cell keeps growing despite the DNA damage, likely resulting in cancer. From the given scenerios A, B and C are highly likely to result in a cancer-like attractor with 50% probability each. 
         - Mutation A : removes the p53 that detects DNA damage --> no trigger for cell death or repair 
