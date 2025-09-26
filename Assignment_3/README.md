@@ -30,13 +30,13 @@
 | C: MDM2 overexpression   | 50% (128/256)                                             |
 | D: p21 KO (custom)       | 3.125% (8/256)                                            |
 
-    That is when the cell keeps growing despite the DNA damage, likely resulting in cancer. From the given scenerios A, B and C are highly likely to result in a cancer-like attractor with 50% probability each. 
-        - Mutation A : removes the p53 that detects DNA damage --> no trigger for cell death or repair 
-        - Mutation B : amplification of MYC gene leads to uncontrolled cell-growth
-        - Mutation C : MDM2 overexpression supresses p53, the same tumor-suppressor disrupted in Mutation A
+That is when the cell keeps growing despite the DNA damage, likely resulting in cancer. From the given scenerios A, B and C are highly likely to result in a cancer-like attractor with 50% probability each. 
+    - Mutation A : removes the p53 that detects DNA damage --> no trigger for cell death or repair 
+    - Mutation B : amplification of MYC gene leads to uncontrolled cell-growth
+    - Mutation C : MDM2 overexpression supresses p53, the same tumor-suppressor disrupted in Mutation A
 
-    In all three cases, the cell can no longer stop dividing (even when damage is detected).
-    On the other hand, only 8% of no-mutation / mutation D scenerios end in cancer-like attractor states, making them less dangerous.
+In all three cases, the cell can no longer stop dividing (even when damage is detected). 
+On the other hand, only 8% of no-mutation / mutation D scenerios end in cancer-like attractor states, making them less dangerous.
 
 2. Explain the role of feedback loops (e.g., MYC → MDM2 → p53)
 ![alt text](cell_regulatury_network.jpg)
