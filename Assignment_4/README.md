@@ -1,4 +1,4 @@
-# Assignment 3 - Network biology
+# Assignment 4 - Plant systems biology
 **Course:** Multi-scale Modeling of Biological Systems
 **Assignment group 6**
 
@@ -44,7 +44,7 @@ This assignment focuses on modeling pathogen infection in plant tissues using a 
 #### 4 Hours (t = 4h)
 <img src="exercise_1/4hours.png" alt="4_hours" width="300"/>
 
-**Description**: The spreading slows down, but seems to stop spreading any further. At this time stamp the first 4 layers of plant-cells are infected on the left side of the plant, however the infection haven't reached the center or the right side yet.
+**Description**: The spreading significantly slowed down. At this time stamp the first 4 layers of plant-cells are infected on the left side of the plant, however the infection haven't reached the center or the right side yet.
 
 ### Key Observations
 The pathogen secretes a chemical that weakens the cell walls of the neighbouring plant cells. With the current diffusion and spreading coefficients, the infection doesn't spread throughout the whole plant, but stops after the first few layers.
@@ -55,14 +55,14 @@ This behaviour shows how the diffusion rate, decay, and infection threshold bala
 ## Exercise 2: CellHouseKeeping Code Analysis
 
 ### Code Section Overview
-- **Cell behaviour**: The function updates all the cells in the model once per time step. First if it is a pathogen cell, then we increase the cell's target area by two unit per iteration. This sets ideal size for the cell aka telling the cell to grow, hence initializing the spread rate for the infection.
+- **Cell behaviour**: The function updates all the cells in the model once per time step. First if it is a pathogen cell, then we increase the cell's target area by two unit per iteration. This sets the ideal size for the cell aka telling the cell to grow, hence initializing the spread rate for the infection.
 - **Base wall length initialization**: Then we iterate through all the wall elements of the cel, initializing the NaN values with a deafult value of 25 for future calculations.
-- **Pathogen level detection**: This is the part where we update the pathogen levels in the cell, we essentially double the pathogen-chemical-concentartion, however we cap it at 1.2. This is so we keep the simulation realistic.
-- **Cell wall weakening**: If the cell is infeced (aka the pathogen-chem-level is above 0.1) then to mimic the disease behaviour, we decrease the wall-stiffness proportionally to the chem-level. At healthy cells that are not infected yet (or if the current cell is the pathogen cell) the wall-stiffness-value remains untouched.
+- **Pathogen level detection**: This is the part where we detect and update the pathogen levels in the cell, we essentially double the pathogen-chemical-concentartion, however we cap it at 1.2. This is so that we keep the simulation realistic.
+- **Cell wall weakening**: If the cell is infected (aka the pathogen-chemical-level is above 0.1) then to mimic the disease behaviour, we decrease the wall-stiffness proportionally to the present chemical-level. At healthy cells which are not yet infected (or if the current cell is the pathogen cell) the wall-stiffness-value remains untouched.
 
 
 ### Biological Relevance
-This function represents how the plant hendles infection spread. It updates each cell’s internal and wall properties at every simulation step, and makes cell walls more penetrable in areas where the pathogen’s chemical accumulates.
+This function represents how the plant handles infection spread. It updates each cell’s internal and wall properties at every simulation step, and makes cell walls more penetrable in areas where the pathogen’s chemical accumulates.
 
 ---
 
@@ -72,9 +72,9 @@ This function represents how the plant hendles infection spread. It updates each
 ![Network](network_completed.png)
 
 ### Missing elements:
-1. **Decreasing wall stability**: When the chemical diffusion reaches a new cell, it decreases the cell's wall-stiffness, making it more susceptible.
-2. **Increasing pathogen concentration**: If a cell becomes infected, it starts producin pathongen and the concentration is doubled in the cell at each iteration, reinforcing the the cycle.
-3. **Capping pathongen concentration**: What the model does not show is that the concentration level can reach a maximum of 1.2, and capped at that point to keep the diffusion simulation realistic.
+1. **Decreasing wall stability**: When the chemical diffusion reaches a new cell, it decreases the cell's wall-stiffness, making the cell more susceptible.
+2. **Increasing pathogen concentration**: If a cell becomes infected, it starts producing pathongen and that concentration is doubled in the cell at each iteration, reinforcing the cycle.
+3. **Capping pathongen concentration**: What the model does not show is that after the concentration level can  reaches a maximum of 1.2, it capped at that point to keep the diffusion simulation realistic.
 4. **Feedback loop**: The model also does not include a the additiononl logic from the code that checks whether the cell is already infected or not. In case the cell is healthy (C(0)=0) the wall stability remains the same.
 
 ---
@@ -86,9 +86,8 @@ This function represents how the plant hendles infection spread. It updates each
 - **Decreased coefficient**: 10^-6
 - **Increased coefficient**: 10^-4
 
-### Results
 
-#### Decreased diffusion coefficient by factor of 10 (10^-6)
+### Decreased diffusion coefficient by factor of 10 (10^-6)
 #### Initial State (t = 0h)
 <img src="exercise_4/diff_decrease_t0.png" alt="initial_state" width="300"/>
 
@@ -107,7 +106,7 @@ This function represents how the plant hendles infection spread. It updates each
 #### 3 Hours (t = 3h)
 <img src="exercise_4/diff_decrease_t3.png" alt="3_hours" width="300"/>
 
-**Description**: The darker shade of brown in the infected cells indicate that the chemical concentration is increasing, but still rather low. Number of infected cells at t=3 is 6.
+**Description**: The darker shade of brown /green in the infected cells indicate that the chemical concentration is increasing, but still rather low. Number of infected cells at t=3 is 6.
 
 #### 4 Hours (t = 4h)
 <img src="exercise_4/diff_decrease_t4.png" alt="4_hours" width="300"/>
@@ -115,7 +114,7 @@ This function represents how the plant hendles infection spread. It updates each
 **Description**: Now the shade of brown indicates that the chemical concentration is clearly higher than before, but haven't reached the full capacity in the newly infected cells (like the ones at the periphery). Number of infected cells at t=4 is 6.
 
 ----
-#### Increased diffusion coefficient by factor of 10 (10^-4)
+### Increased diffusion coefficient by factor of 10 (10^-4)
 #### Initial State (t = 0h)
 <img src="exercise_4/diff_increase_t0.png" alt="initial_state" width="300"/>
 
@@ -142,7 +141,7 @@ This function represents how the plant hendles infection spread. It updates each
 **Description**: The spreading reached the right side as well, infecting every single cell in the plant.
 
 ### Key Observations
-By adjusting the diffusion coefficient, we not only modify the simulation time (lower coeff meaning slower spread and vice versa) but it also affects how far the infection spreads. In the first case, when we decreased the coefficient, the virus only spread to the surrounding few cells. In the second case, it reached all the cells in the plant.
+By adjusting the diffusion coefficient, we not only modify the simulation time (lower coefficient meaning slower spread and vice versa) but it also affects how far the infection spreads. In the first case, when we decreased the coefficient, the virus only spread to the surrounding few cells. In the second case, it reached all the cells in the plant.
 
 ---
 
@@ -222,5 +221,5 @@ Assignment_4/
 │   ├── diff_increase_t2.png
 │   ├── diff_increase_t3.png
 │   └── diff_increase_t4.png
-└── network_completed.png              # Exercise3
+└── network_completed.png              # Exercise 3
 ```
