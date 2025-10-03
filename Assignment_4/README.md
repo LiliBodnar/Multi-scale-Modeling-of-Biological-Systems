@@ -92,57 +92,57 @@ This function represents how the plant hendles infection spread. It updates each
 #### Initial State (t = 0h)
 <img src="exercise_4/diff_decrease_t0.png" alt="initial_state" width="300"/>
 
-**Description**: TODO
+**Description**: The tissue is fully healthy (bright green) in the beginning, and there is a red pathogen cell on the left side of the plant. Surrounding the pathogen, a narrow brown zone appears that shows the diffusion of the cell-wall-weakening chemical into neighboring plant cells. This chemical locally reduces cell wall stability, making the tissue more susceptible to infection. At t=0 no plant cells are infected yet.
 
 #### 1 Hour (t = 1h)
 <img src="exercise_4/diff_decrease_t1.png" alt="1_hour" width="300"/>
 
-**Description**: TODO
+**Description**: The spreading started at the neghbouring cells, however it is much slower than in the original setting. The number of infected cells at t=1 is 2.
 
 #### 2 Hours (t = 2h)
 <img src="exercise_4/diff_decrease_t2.png" alt="2_hours" width="300"/>
 
-**Description**:TODO
+**Description**: Pathongen cell grew and further embedded itself into the plant, however the infection spread is barely noticable further in plant-cells (slight tint of brown in surrounding cells indicate that the cell is infected, however the pathogen concentration is still very low). The number of infected cells at t=2 is 3.
 
 #### 3 Hours (t = 3h)
 <img src="exercise_4/diff_decrease_t3.png" alt="3_hours" width="300"/>
 
-**Description**: TODO
+**Description**: The darker shade of brown in the infected cells indicate that the chemical concentration is increasing, but still rather low. Number of infected cells at t=3 is 6.
 
 #### 4 Hours (t = 4h)
 <img src="exercise_4/diff_decrease_t4.png" alt="4_hours" width="300"/>
 
-**Description**: TODO
+**Description**: Now the shade of brown indicates that the chemical concentration is clearly higher than before, but haven't reached the full capacity in the newly infected cells (like the ones at the periphery). Number of infected cells at t=4 is 6.
 
 ----
 #### Increased diffusion coefficient by factor of 10 (10^-4)
 #### Initial State (t = 0h)
 <img src="exercise_4/diff_increase_t0.png" alt="initial_state" width="300"/>
 
-**Description**: TODO
+**Description**:  The tissue is fully healthy (bright green) in the beginning, and there is a red pathogen cell on the left side of the plant. Surrounding the pathogen, a narrow brown zone appears that shows the diffusion of the cell-wall-weakening chemical into neighboring plant cells. This chemical locally reduces cell wall stability, making the tissue more susceptible to infection. At t=0 no plant cells are infected yet.
 
 #### 1 Hour (t = 1h)
 <img src="exercise_4/diff_increase_t1.png" alt="1_hour" width="300"/>
 
-**Description**: TODO
+**Description**: After only 1 hour the pathogen infected more than half the plant-cells. This shows how increasing the diffusion coefficient speeds up the disease spreading. 
 
 #### 2 Hours (t = 2h)
 <img src="exercise_4/diff_increase_t2.png" alt="2_hours" width="300"/>
 
-**Description**: TODO
+**Description**: The disease spreads further.
 
 #### 3 Hours (t = 3h)
 <img src="exercise_4/diff_increase_t3.png" alt="3_hours" width="300"/>
 
-**Description**: TODO
+**Description**: The spreading seem to slow down, but still conquer new cells.
 
 #### 4 Hours (t = 4h)
 <img src="exercise_4/diff_increase_t4.png" alt="4_hours" width="300"/>
 
-**Description**: TODO
+**Description**: The spreading reached the right side as well, infecting every single cell in the plant.
 
 ### Key Observations
-TODO: summarize how changing the diffusion coeff changes the infection pattern, speed, etc.
+By adjusting the diffusion coefficient, we not only modify the simulation time (lower coeff meaning slower spread and vice versa) but it also affects how far the infection spreads. In the first case, when we decreased the coefficient, the virus only spread to the surrounding few cells. In the second case, it reached all the cells in the plant.
 
 ---
 
